@@ -14,11 +14,11 @@ function titleCase(str) {
             }
             // if first capitilize push to new word
             else if (letterIndex == 0) { newWord.push(strSplit[wordIndex][letterIndex].toUpperCase()); }
-            // if last [i] & last [j] lowercase and push
+            // if last [wordIndex] & last [letterIndex] lowercase and push
             else if (letterIndex == strSplit[wordIndex].length - 1 && wordIndex == strSplit.length - 1) {
                 newWord.push(strSplit[wordIndex][letterIndex].toLowerCase());
             }
-            // if last [j] lowercase and push with + ' '
+            // if last [letterIndex] lowercase and push with + ' '
             else if (letterIndex == strSplit[wordIndex].length - 1) {
                 newWord.push(strSplit[wordIndex][letterIndex].toLowerCase() + ' ');
             }
