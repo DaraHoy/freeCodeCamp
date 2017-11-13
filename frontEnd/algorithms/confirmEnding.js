@@ -3,17 +3,10 @@
 // This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
 
 function confirmEnding(str, target) {
-    // split string
-    var strArray = str.split(' ');
-    console.log(strArray)
-    //put last item of str array into var last
-    var last = strArray[strArray.length - 1];
-    // if last == target return true
-    if (last == target) {
-        return true
-
-    }
-    // else return false
+    // get var start = 0 - target.length
+    var start = 0 - target.length;
+    // compare str.substr(start, length) to target
+    if (str.substr(start, target.length) == target) { return true }
     else { return false }
 }
 
