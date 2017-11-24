@@ -4,9 +4,12 @@
 
 function slasher(arr, howMany) {
     // it doesn't always pay to be first
-
-    return arr;
+    var newArr = [];
+    newArr = arr.slice(howMany);
+    return newArr;
 }
 
 //slasher([1, 2, 3], 2) should return [3]
 console.log(slasher([1, 2, 3], 2));
+//slasher([1, 2, 3], 9) should return []
+console.log(slasher([1, 2, 3], 9))
