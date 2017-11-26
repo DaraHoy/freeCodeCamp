@@ -10,14 +10,14 @@ function mutation(arr) {
     var str = arr[0].toLowerCase();
     var charChk = arr[1].toLowerCase();
     for (var pos = 0; pos <= charChk.length;) {
-        if (str.indexOf(charChk) !== -1) {
+        if (str.indexOf(charChk) !== -1) { // Checks whether the entirety of charChk exist as is in str
             return true
         }
-        else if (str.indexOf(charChk[pos]) !== -1) {
-            pos++
+        else if (str.indexOf(charChk[pos]) !== -1) { //Checks for occurances for each index individually, only incrementing to the next position if an occurance is found
+            pos++ // Only incrememnts if an occurance is found
         }
         else if (pos == charChk.length) {
-            return true
+            return true //If the position reaches the full length arr[1] then an occurance of all items were found and a true statement is returned
         }
         else {
             return false
