@@ -12,4 +12,5 @@ function slasher(arr, howMany) {
 //slasher([1, 2, 3], 2) should return [3]
 console.log(slasher([1, 2, 3], 2));
 //slasher([1, 2, 3], 9) should return []
-console.log(slasher([1, 2, 3], 9))
+console.log(slasher([1, 2, 3], 9));
+
