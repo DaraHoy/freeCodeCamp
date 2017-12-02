@@ -6,23 +6,27 @@
 
 // All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 
-function rot13(str) { // LBH QVQ VG!
+function rot13(str) {
 
-    var alpha = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
+    var shiftStr = str.split("").map(x => {
+        // x.charCodeAt() returns ASCII index number
+        // console.log(x.charCodeAt());
+        x = x.charCodeAt(0);
 
-    // str.charCodeAt(0) // returns charCode
-    // String.fromCharCode(65) // A
-    // console.log(str.charCodeAt(0), String.fromCharCode(90))
-
-    for (var i = 0; i < str.length; i++) {
-        if (alpha.indexOf(str.charCodeAt([i])) !== -1) {
-            str[i] = String.fromCharCode(str.charCodeAt(i) + 13);
+        if (x < 65 || x > 90) {
+            return String.fromCharCode(x); // if char is not A-Z do nothing, return char code as is.
         }
-        console.log(str)
-    }
-    return str
+        else if (x < 78) {
+            return String.fromCharCode(x + 13); // if charCode is less than 78 shift up
+        }
+        return String.fromCharCode(x - 13) // shift all valid characters down;
+
+    }).join("");
+    return shiftStr
 }
 
 // Change the inputs below to test
 // rot13("SERR PBQR PNZC") should decode to "FREE CODE CAMP"
 console.log(rot13("SERR PBQR PNZC"));
+// rot13("SERR CVMMN!") should decode to "FREE PIZZA!"
+console.log(rot13("SERR CVMMN!"));
