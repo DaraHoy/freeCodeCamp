@@ -3,13 +3,7 @@
 Boolean primitives are true and false.*/
 
 function booWho(bool) {
-    // // Array of primitive types
-    // var primitives = ['string', 'number', 'boolean', 'undefined', 'null', 'undefined'];
-    // if (primitives.indexOf(typeof bool) !== -1) {
-    //     return true;
-    // }
-    // else { return false }
-    return typeof bool === 'number' && isFinite(bool);
+    return typeof bool === 'boolean';
 }
 
 // booWho(true) should return true.
