@@ -21,6 +21,7 @@ function translatePigLatin(str) {
             if (vowels.indexOf(str[i]) !== -1) {
                 // Join all found consonants & return new string
                 consonants = consonants.join("");
+                ``
                 return str.substr(i) + consonants + "ay";
             }
             else {

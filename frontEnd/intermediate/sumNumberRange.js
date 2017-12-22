@@ -10,9 +10,7 @@ function sumAll(arr) {
         i++;
         range.push(i);
     }
-    return range.reduce(function(sum, num) {
-        return sum + num;
-    }, 0);
+    return range.reduce((sum, num) => sum + num, 0);
 }
 
 //sumAll([1, 4]) should return 10.

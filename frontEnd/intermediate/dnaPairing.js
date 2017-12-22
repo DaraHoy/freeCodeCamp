@@ -11,8 +11,7 @@ The character and its pair are paired up in an array, and all the arrays are gro
 function pairElement(str) {
     var charArray = str.split("");
     console.log(charArray);
-    // var firstChar = charArray[1];
-    // console.log(charArray[1]);
+
     var pairArray = [];
     console.log(pairArray);
     for (var i = 0; i < charArray.length; i++) {
