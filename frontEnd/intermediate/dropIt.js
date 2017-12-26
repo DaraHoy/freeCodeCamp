@@ -24,7 +24,7 @@ function dropElements(arr, func) {
     // Drop them elements.
     for (var i = 0; i < arr.length; i++) {
         if (func(arr[i])) {
-            return arr.slice([i])
+            return arr.slice([i]) //slice is the array equivalent of String.substr()
         }
     }
     return [];
