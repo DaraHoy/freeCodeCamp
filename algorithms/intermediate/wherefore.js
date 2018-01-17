@@ -4,18 +4,19 @@ For example, if the first argument is [{ first: "Romeo", last: "Montague" }, { f
 */
 
 function whatIsInAName(collection, source) {
-    // What's in a name?
-    var arr = [];
-    // Only change code below this line
-    for (var i = 0; i < collection.length; i++) {
-        if (collection[i].hasOwnProperty(Object.keys(source))) {
-            arr.push(collection[i]);
-        }
-    }
 
-    // Only change code above this line
-    return arr;
+    var keys = Object.keys(source);
+
+    return collection.filter(obj => {
+        return keys.every(key => {
+            return obj.hasOwnProperty(key) && obj[key] === source[key];
+        })
+    })
 }
 
 //whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }) should return [{ first: "Tybalt", last: "Capulet" }].
 console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }))
+//whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }) should return [{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }].
+console.log(whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }))
+//whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 }) should return [{ "a": 1, "b": 2 }, { "a": 1, "b": 2, "c": 2 }].
+console.log(whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 }))
