@@ -11,11 +11,16 @@ NOTE: Preserve the case of the original word when you are replacing it. For exam
 */
 
 function myReplace(str, before, after) {
-    var b4 = new RegExp(before, 'i');
-    return str.replace(b4, "#
-    $1#");
+  //helper function to check casing
+  const _checkCase = word => {
+    regex = new RegExp(/[A-Z]/);
+    return regex.test(word);
+  };
+
+  if (_checkCase(before)) {
+    return str.split("").replace(str[0], str[0].toUpperCase);
+  }
 }
-console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"))
-//should return "Let us go to the mall".
-console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"))
-//should return "He is Sitting on the couch".
+console.log(
+  myReplace("A quick brown fox jumped over the lazy dog", "Jumped", "leaped")
+);
