@@ -11,15 +11,29 @@ NOTE: Preserve the case of the original word when you are replacing it. For exam
 */
 
 function myReplace(str, before, after) {
-  var arr = str.split(" ");
-  for (var i = 0; i < arr.length; i++) {
+  //Declare variable to hold regExp
+  var match;
 
-    if (arr[i] === before) {
-      arr[i] = after;
-    }
+  //Checks casing and change after variable to match
+  if (before[0] === before[0].toUpperCase()) {
+    after = after.split('');
+    after[0] = after[0].toUpperCase();
+    after = after.join('');
   }
+  //Builds new regExp to match, case insensitive flag is used as an option
+  match = new RegExp(before, "i");
 
-
-  return arr.join(" ");
+  //returns string with the replacment
+  return str.replace(match, after);
 }
-console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
+
+// var arr = str.split(" ");
+
+// for (var i = 0; i < arr.length; i++) {
+
+//   if (arr[i] === before) {
+//     arr[i] = after;
+//   }
+// }
+// return arr.join(" ");
