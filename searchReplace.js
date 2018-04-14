@@ -14,7 +14,7 @@ function myReplace(str, before, after) {
   //Declare variable to hold regExp
   var match;
 
-  //Checks casing and change after variable to match
+  //Checks casing and change "after" variable to match
   if (before[0] === before[0].toUpperCase()) {
     after = after.split('');
     after[0] = after[0].toUpperCase();
