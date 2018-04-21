@@ -15,18 +15,18 @@ function sumFibs(num) {
     var previous = 0;
     var current = 1;
     var sum = 0;
-    var fib = 1;
     // continue to next fibonacci in sequence
-    while (fib <= num) {
+    while (current <= num) {
         //incrememnt sum if sequence numbers are odd
-        if (fib % 2 !== 0) {
-            sum += fib;
+        if (current % 2 !== 0) {
+            sum += current;
         }
-        fib = previous + current;
-        previous = current;
-        current = fib;
+        //move fib to next number in the sequence
+        current += previous;
+        //move previous to current
+        previous = current - previous;
     }
     return sum;
 }
 
-console.log(sumFibs(1000));
+console.log(sumFibs(10));
